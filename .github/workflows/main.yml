@@ -34,6 +34,8 @@ jobs:
         run: flutter pub get
 
       - name: Build Windows
+        env:
+          CXXFLAGS: /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS
         run: flutter build windows --release
 
       - name: Package application
